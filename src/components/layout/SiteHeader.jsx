@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import MobileMenu from './MobileMenu'
 
 export default function SiteHeader() {
@@ -29,9 +30,16 @@ export default function SiteHeader() {
       <header className={`${headerClass} ${headerTone}`}>
         <div className="header-inner mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
           
-          <a href="/" className="brandmark flex items-center gap-2">
-            <div className="brandmark-glyph h-6 w-6 rounded bg-white"></div>
-            <span className="brandmark-name text-sm font-semibold tracking-wide">Concreate Solutions</span>
+          <a href="/" className="brandmark inline-flex items-center gap-2">
+            <Image
+              src="/images/concreet_logo.png"   
+              alt="Concreate Solutions logo"
+              width={200}                       
+              height={40}
+              className="brandmark-image h-7 w-auto object-contain"
+              priority
+            />
+            <span className="sr-only">Concreate Solutions</span>
           </a>
 
           <nav className="desktop-nav hidden md:flex items-center gap-1">

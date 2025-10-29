@@ -16,10 +16,10 @@ export default function HeroSignature({
   poster = '/images/hero-poster.jpg',
   bgImageUrl = '/images/hero-bg.png',
   theme = {
-    bgFrom: '#0f172a', // slate-900-ish
-    bgTo: '#020617',   // slate-950
-    accent: '#fbbf24', // amber-400
-    text: '#e5e7eb',   // gray-200
+    bgFrom: '#0f172a', 
+    bgTo: '#020617',   
+    accent: '#fbbf24', 
+    text: '#e5e7eb', 
   },
 }) {
   const vRef = useRef(null)
@@ -43,11 +43,9 @@ export default function HeroSignature({
       className="herosig-wrapper relative overflow-clip"
       style={{ backgroundImage: `url(${bgImageUrl})` }}
     >
-      {/* angled beam */}
       <div className="pointer-events-none absolute -left-20 top-[-30%] h-[160%] w-[60%] -skew-x-12 bg-white/5 blur-2xl" />
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-20">
-        {/* LEFT: copy */}
         <div className="herosig-copy space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-white/80">
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: theme.accent }} />
@@ -77,16 +75,13 @@ export default function HeroSignature({
             </a>
           </div>
 
-          {/* floating metrics under copy (mobile shows inline, desktop absolutely aligned near video) */}
           <div className="herosig-metrics mt-6 flex gap-3 md:hidden">
             <MetricBadge value="650+" label="Projects" />
             <MetricBadge value="4.9★" label="Avg. rating" />
           </div>
         </div>
 
-        {/* RIGHT: media circle */}
         <div className="herosig-media relative">
-          {/* gradient ring */}
           <div
             className="absolute inset-0 -z-10 rounded-full blur-2xl"
             style={{
@@ -116,13 +111,11 @@ export default function HeroSignature({
               <BrandSeal />
           </div>
 
-          {/* desktop metrics floating on the media */}
           <div className="absolute -bottom-15 -right-20 hidden gap-3 md:flex">
             <MetricBadge value="650+" label="Projects" />
             <MetricBadge value="12yr" label="Experience" />
           </div>
 
-          {/* accent tick at top-right */}
           <div
             className="absolute -right-6 -top-6 h-20 w-20 rotate-12 rounded-xl opacity-70"
             style={{ backgroundColor: theme.accent }}
@@ -130,7 +123,6 @@ export default function HeroSignature({
         </div>
       </div>
 
-      {/* <TrustBar /> */}
     </section>
   )
 }

@@ -28,7 +28,7 @@ export default function ServicesShowcase({
   }, [])
 
   return (
-    <section className="services-band relative overflow-hidden py-16 md:py-24">
+    <section className="services-band relative overflow-hidden py-16 md:py-24" data-aos="fade-up">
       <Image
         src="/images/services/service-bg.png"
         alt=""
