@@ -1,0 +1,7 @@
+[
+  { "id": "brickwork", "label": "Bricklaying & Brickwork" },
+  { "id": "retaining", "label": "Retaining Walls" },
+  { "id": "driveways", "label": "Concrete Driveways & Slabs" },
+  { "id": "landscaping", "label": "Landscaping & Hardscaping" },
+  { "id": "paving", "label": "Paving" }
+]

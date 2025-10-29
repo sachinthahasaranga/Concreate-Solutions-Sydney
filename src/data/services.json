@@ -1,0 +1,37 @@
+[
+  {
+    "id": "brickwork",
+    "title": "Bricklaying & Brickwork",
+    "desc": "Professional bricklayers for new builds, alterations and repairs. Clean lines and durable finishes.",
+    "image": "/images/services/s1.png",
+    "href": "/services/brickwork"
+  },
+  {
+    "id": "retaining",
+    "title": "Retaining Walls",
+    "desc": "Engineered block/stone retaining walls, drainage and footings to spec.",
+    "image": "/images/services/s2.png",
+    "href": "/services/retaining-walls"
+  },
+  {
+    "id": "driveways",
+    "title": "Concrete Driveways & Slabs",
+    "desc": "Excavation, formwork, steel, pour and finish for driveways, paths and slabs.",
+    "image": "/images/services/s3.png",
+    "href": "/services/concrete-driveways"
+  },
+  {
+    "id": "landscaping",
+    "title": "Landscaping & Hardscaping",
+    "desc": "Integrated outdoor works: edges, steps, beds and preparation.",
+    "image": "/images/services/s4.png",
+    "href": "/services/landscaping"
+  },
+  {
+    "id": "paving",
+    "title": "Paving",
+    "desc": "Long-lasting patios, paths and entries with neat cuts and compaction.",
+    "image": "/images/services/s5.png",
+    "href": "/services/paving"
+  }
+]

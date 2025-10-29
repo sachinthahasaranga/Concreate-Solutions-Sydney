@@ -19,7 +19,6 @@ export default function BrandSeal({
     >
       <circle cx={r} cy={r} r={r} fill={bg} />
       <circle cx={r} cy={r} r={r - 8} fill="none" stroke={fg} strokeWidth="2" opacity="0.7" />
-      {/* Rotated text around the ring */}
       <g fill={fg}>
         {Array.from(labelOuter).map((ch, i) => {
           const angle = (i * charAngle - 90) * (Math.PI / 180)
@@ -42,7 +41,6 @@ export default function BrandSeal({
           )
         })}
       </g>
-      {/* Center icon */}
       <g>
         <circle cx={r} cy={r} r="24" fill={fg} />
         <text

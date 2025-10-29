@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Madara Galappaththi",
+    "role": "Banker",
+    "avatar": "/images/test1.png",
+    "quote": "Our house was quite old, and we wanted to renovate it without spending too much. Concreate Solutions did a superb job at a reasonable price. The house looks brand new now, and the work quality is excellent. Highly recommend them!"
+  },
+  {
+    "id": 2,
+    "name": "Hassan S.",
+    "role": "Renovator, Blacktown",
+    "avatar": "/images/test1.png",
+    "quote": "Mobilisation was quick, neat work, and the site was spotless afterwards. Would recommend without hesitation."
+  },
+  {
+    "id": 3,
+    "name": "David L.",
+    "role": "Homeowner, Seven Hills",
+    "avatar": "/images/test1.png",
+    "quote": "They handled excavation and exposed aggregate perfectly. Transparent quote and competitive. The driveway is fantastic."
+  }
+]
