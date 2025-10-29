@@ -53,7 +53,7 @@ export default function HomeQuoteSection({
     <section className="bg-[#fbfbfc]">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 md:grid-cols-2 md:px-6">
         
-        <div className="space-y-6 pr-0 md:pr-6">
+        <div className="space-y-6 pr-0 md:pr-6" data-aos="fade-right">
           <div className="inline-flex items-center gap-3 rounded-full bg-[#ffe9cc] px-4 py-2 text-xs font-semibold text-[#0b2a4a]">
             FREE QUOTE
           </div>
@@ -103,7 +103,7 @@ export default function HomeQuoteSection({
         </div>
 
         
-        <div className="rounded-3xl bg-white p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,.12)] ring-1 ring-black/5">
+        <div className="rounded-3xl bg-white p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,.12)] ring-1 ring-black/5" data-aos="fade-up">
           <form onSubmit={onSubmit} className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div>
               <label className="mb-2 block text-sm font-semibold text-[#0b2a4a]">YOUR NAME *</label>
