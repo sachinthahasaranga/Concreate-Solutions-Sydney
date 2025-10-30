@@ -4,34 +4,99 @@
     "title": "Bricklaying & Brickwork",
     "desc": "Professional bricklayers for new builds, alterations and repairs. Clean lines and durable finishes.",
     "image": "/images/services/s1.png",
-    "href": "/services/brickwork"
+    "href": "/services/brickwork",
+
+    "tagline": "Crisp lines. Structural quality.",
+    "features": [
+      "New builds, alterations & repairs",
+      "Face brick & blockwork",
+      "Tie-ins, lintels, weeps & control joints",
+      "Neat cuts & tidy sites"
+    ],
+    "longDesc": "From face brick to structural blockwork, our licensed teams deliver crisp lines, consistent joints and safe, tidy work sites that keep your build moving.",
+    "gallery": ["/images/services/s1a.jpg", "/images/services/s1b.jpg"],
+    "badge": "Popular",
+    "cta": { "label": "View Brickwork", "href": "/services/brickwork" },
+    "icon": ""
   },
   {
     "id": "retaining",
     "title": "Retaining Walls",
     "desc": "Engineered block/stone retaining walls, drainage and footings to spec.",
     "image": "/images/services/s2.png",
-    "href": "/services/retaining-walls"
+    "href": "/services/retaining-walls",
+
+    "tagline": "Engineered strength, clean finishes.",
+    "features": [
+      "Concrete sleeper & block systems",
+      "Drainage & geogrid per spec",
+      "Footings, capping, steps",
+      "Council & compliance guidance"
+    ],
+    "longDesc": "We build retaining walls to spec with correct drainage, reinforcement and footings so the structure performs long term without surprise movement.",
+    "gallery": ["/images/services/s2a.jpg"],
+    "badge": "Engineered",
+    "cta": { "label": "View Retaining Walls", "href": "/services/retaining-walls" },
+    "icon": ""
   },
   {
     "id": "driveways",
     "title": "Concrete Driveways & Slabs",
     "desc": "Excavation, formwork, steel, pour and finish for driveways, paths and slabs.",
     "image": "/images/services/s3.png",
-    "href": "/services/concrete-driveways"
+    "href": "/services/concrete-driveways",
+
+    "tagline": "From prep to perfect finish.",
+    "features": [
+      "Excavation & base prep",
+      "Formwork & steel (mesh/N12)",
+      "Broom, expose, colour & seal",
+      "Paths, crossovers & shed slabs"
+    ],
+    "longDesc": "Driveways and slabs delivered cleanly with the right base, steel and finish. We plan access, set levels and hand over a neat surface ready to use.",
+    "gallery": ["/images/services/s3a.jpg", "/images/services/s3b.jpg"],
+    "badge": "Engineered",
+    "cta": { "label": "View Driveways", "href": "/services/concrete-driveways" },
+    "icon": ""
   },
   {
     "id": "landscaping",
     "title": "Landscaping & Hardscaping",
     "desc": "Integrated outdoor works: edges, steps, beds and preparation.",
     "image": "/images/services/s4.png",
-    "href": "/services/landscaping"
+    "href": "/services/landscaping",
+
+    "tagline": "Functional, durable outdoor spaces.",
+    "features": [
+      "Garden edges & steps",
+      "Soil, turf & drainage prep",
+      "Retaining integration",
+      "Clean, low-maintenance finishes"
+    ],
+    "longDesc": "We combine structural elements with practical prep to deliver outdoor areas that look great and drain/perform well long term.",
+    "gallery": ["/images/services/s4a.jpg"],
+    "badge": "Complete",
+    "cta": { "label": "View Landscaping", "href": "/services/landscaping" },
+    "icon": ""
   },
   {
     "id": "paving",
     "title": "Paving",
     "desc": "Long-lasting patios, paths and entries with neat cuts and compaction.",
     "image": "/images/services/s5.png",
-    "href": "/services/paving"
+    "href": "/services/paving",
+
+    "tagline": "Neat cuts. Solid compaction.",
+    "features": [
+      "Base prep & screed",
+      "Pattern layouts & borders",
+      "Drainage falls & edging",
+      "Sealing & maintenance advice"
+    ],
+    "longDesc": "We deliver patios and pathways with tight joints, clean cuts and solid compaction so they stay flat and sharp.",
+    "gallery": ["/images/services/s5a.jpg"],
+    "badge": "Durable",
+    "cta": { "label": "View Paving", "href": "/services/paving" },
+    "icon": ""
   }
 ]
