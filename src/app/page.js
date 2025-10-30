@@ -1,4 +1,3 @@
-import AboutIntro from '@/components/landing/AboutIntro'
 import HeroSignature from '@/components/landing/HeroSignature'
 import HomeQuoteSection from '@/components/landing/HomeQuoteSection'
 import PerformanceBanner from '@/components/landing/PerformanceBanner'
@@ -30,11 +29,6 @@ export default function HomePage() {
       />
 
       <ValueProps />
-      {/* <AboutIntro
-        imgMain="/images/about-main.png"
-        imgAccent="/images/about-back.png"
-        whatsapp="0712758785"
-      /> */}
       <WhatWeDo
         imageSrc="/images/whatwedo-main.png"
         whatsapp="0712758785"

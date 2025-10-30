@@ -18,9 +18,9 @@ export default function ContactIntro({
   imageSrc = '/images/contact/handshake.png',
   imageAlt = 'Two site supervisors greeting on location',
 
-  phoneMain = '042 955 0837',
-  phoneSupport = '042 955 0837',
-  email = 'info@concreatesolutions.com.au',
+  phoneMain = '071 275 8785',
+  phoneSupport = '071 275 8785',
+  email = 'info@rrrbrick.com',
 
   hours = {
     monfri: 'Monday to Friday: 9:00 AM – 6:00 PM',

@@ -1,14 +1,15 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
+import emailjs from '@emailjs/browser'
 import services from '@/data/contactservices.json'
 
 const input =
   'w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#0b2a4a]'
 
 export default function HomeQuoteSection({
-  phone = '0429 550 837',
-  email = 'info@concreatesolutions.com.au',
+  phone = '071-2758785',
+  email = 'info@rrrbrick.com',
 }) {
   const [loading, setLoading] = useState(false)
   const [f, setF] = useState({
@@ -20,6 +21,11 @@ export default function HomeQuoteSection({
     details: '',
   })
   const onChange = (e) => setF((s) => ({ ...s, [e.target.name]: e.target.value }))
+
+  useEffect(() => {
+    const pk = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    if (pk) emailjs.init({ publicKey: pk })
+  }, [])
 
   const validate = () => {
     if (!f.name.trim()) return 'Please enter your name.'
@@ -38,21 +44,78 @@ export default function HomeQuoteSection({
       Swal.fire({ icon: 'warning', title: 'Check your form', text: err })
       return
     }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL
+    const adminName  = process.env.NEXT_PUBLIC_ADMIN_NAME || 'Concreate Solutions'
+
+    if (!serviceId || !templateId || !adminEmail) {
+      Swal.fire({ icon: 'error', title: 'Email not configured', text: 'Missing EmailJS env vars' })
+      return
+    }
+
+    const now = new Date()
+    const selectedLabel =
+      services.find((s) => String(s.id) === String(f.service))?.label || f.service
+
+    const base = {
+      name: f.name.trim(),
+      email: f.email.trim(),
+      phone: f.phone.trim(),
+      suburb: f.suburb.trim(),
+      service: selectedLabel,
+      details: f.details.trim(),
+      time: now.toLocaleString('en-AU', { hour12: false }),
+      site_name: 'Concreate Solutions Sydney',
+    }
+
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 500))
-    setLoading(false)
-    Swal.fire({
-      icon: 'info',
-      title: 'Almost ready!',
-      text: 'This feature is currently not available.',
-      confirmButtonColor: '#0b2a4a',
-    })
+    try {
+      const toAdmin = {
+        ...base,
+        to_email: adminEmail,
+        to_name: adminName,
+        subject: `New Quote Request — ${selectedLabel} — ${base.suburb}`,
+        mode: 'admin',
+      }
+
+      const toUser = {
+        ...base,
+        to_email: base.email,
+        to_name: base.name,
+        subject: 'We’ve received your quote request — Concreate Solutions Sydney',
+        mode: 'user',
+      }
+
+      await Promise.all([
+        emailjs.send(serviceId, templateId, toAdmin),
+        emailjs.send(serviceId, templateId, toUser),
+      ])
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Thanks! We received your request',
+        confirmButtonColor: '#0b2a4a',
+      })
+
+      setF({ name: '', email: '', phone: '', suburb: '', service: '', details: '' })
+    } catch (e) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Send failed',
+        text: 'Please try again in a moment.',
+        confirmButtonColor: '#0b2a4a',
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <section className="bg-[#fbfbfc]">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 md:grid-cols-2 md:px-6">
-        
+        {/* left copy */}
         <div className="space-y-6 pr-0 md:pr-6" data-aos="fade-right">
           <div className="inline-flex items-center gap-3 rounded-full bg-[#ffe9cc] px-4 py-2 text-xs font-semibold text-[#0b2a4a]">
             FREE QUOTE
@@ -65,10 +128,8 @@ export default function HomeQuoteSection({
           </h2>
 
           <p className="max-w-prose text-[17px] leading-8 text-gray-600">
-            Need a professional <strong>bricklayer</strong> or{' '}
-            <strong>hardscaping</strong> crew in Sydney? Tell us about your
-            project our team replies quickly with clear, no-obligation quotes for
-            residential and commercial work.
+            Need a professional <strong>bricklayer</strong> or <strong>hardscaping</strong> crew in Sydney?
+            Tell us about your project—our team replies quickly with clear, no-obligation quotes.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -102,7 +163,7 @@ export default function HomeQuoteSection({
           </p>
         </div>
 
-        
+        {/* form */}
         <div className="rounded-3xl bg-white p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,.12)] ring-1 ring-black/5" data-aos="fade-up">
           <form onSubmit={onSubmit} className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div>
@@ -138,7 +199,7 @@ export default function HomeQuoteSection({
                 value={f.details}
                 onChange={onChange}
                 rows={6}
-                placeholder='Please describe your requirement.'
+                placeholder="Please describe your requirement."
                 className={input}
               />
             </div>

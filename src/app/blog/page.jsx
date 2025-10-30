@@ -16,7 +16,7 @@ export default function BlogPage() {
         kicker="INSIGHTS"
         title="Latest Articles & Guides"
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
-        imageSrc="/images/blog/header.jpg"
+        imageSrc="/images/blogbg.png"
         imageAlt="Project collage"
         bgImage="/images/headers/header.png"
         accent="#ff8a00"

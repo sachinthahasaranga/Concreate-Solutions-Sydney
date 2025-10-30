@@ -44,7 +44,7 @@ async function main() {
     await prisma.post.createMany({
       data: [
         {
-          title: 'Welcome to Concreate Solutions Sydney',
+          title: 'Welcome to RRR Bricklaying',
           slug: 'welcome-to-concreate-solutions-sydney',
           description:
             'Introducing our professional concrete services across Sydney — driveways, pathways, and retaining walls.',

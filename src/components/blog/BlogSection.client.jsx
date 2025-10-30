@@ -4,7 +4,7 @@ import BlogCard from './BlogCard'
 
 export default function BlogSectionClient({
   title = 'From the Blog',
-  blurb = 'Tips, how-to and project insights from our RRR team.',
+  blurb = 'Tips and project insights from our RRR Team.',
   limit = 6,
 }) {
   const [posts, setPosts] = useState([])

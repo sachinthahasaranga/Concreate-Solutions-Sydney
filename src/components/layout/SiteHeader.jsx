@@ -17,7 +17,7 @@ export default function SiteHeader() {
   const headerClass =
     'header-container sticky top-0 z-50 transition-all duration-300 will-change-[background,backdrop-filter,border-color]'
   const headerTone = isTop
-    ? 'bg-black text-white'
+    ? 'bg-[#0b172a] text-white'
     : 'bg-gray-900/70 text-white backdrop-blur-md border-b border-white/10'
 
   const linkBase =

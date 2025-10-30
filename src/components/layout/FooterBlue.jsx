@@ -11,27 +11,24 @@ const QUICK_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Privacy Policy', href: '/legal/privacy' },
-  { label: 'Terms & Conditions', href: '/legal/terms' },
 ]
 
 const SERVICE_LINKS = [
-  { label: 'Bricklaying', href: '/services/bricklaying' },
-  { label: 'Retaining Walls', href: '/services/retaining-walls' },
-  { label: 'Concrete Driveways', href: '/services/concrete-driveways' },
-  { label: 'Decorative Concrete', href: '/services/decorative-concrete' },
-  { label: 'Paving', href: '/services/paving' },
-  { label: 'Excavation', href: '/services/excavation' },
+  { label: 'Bricklaying', href: '/services/' },
+  { label: 'Retaining Walls', href: '/services/' },
+  { label: 'Concrete Driveways', href: '/services/' },
+  { label: 'Decorative Concrete', href: '/services/' },
+  { label: 'Paving', href: '/services/' },
 ]
 
 const toWa = (raw) => 'https://wa.me/' + (raw || '').replace(/^0/, '94').replace(/\D/g, '')
 
 export default function FooterBlue(props) {
   const {
-    phone = '0429 550 837',
-    email = 'info@concreatesolutions.com.au',
+    phone = '071 275 8785',
+    email = 'info@rrrbrick.com',
     address = 'Sydney, NSW, Australia',
-    brandName = 'Concreate Solutions',
+    brandName = ' RRR Bricklaying',
     year = new Date().getFullYear(),
     whatsapp = '0712758785',
     logoSrc = '/images/concreet_logo.png',
@@ -60,7 +57,7 @@ export default function FooterBlue(props) {
     Swal.fire({
       icon: 'warning',
       title: 'Coming soon',
-      text: 'This feature is currently not available. We’ll enable EmailJS integration next.',
+      text: 'This feature is currently not available.',
       confirmButtonColor: '#0b2a4a',
     })
     setNewsletterEmail('')
@@ -159,7 +156,7 @@ export default function FooterBlue(props) {
             <h3 className="mb-4 text-lg font-bold">Services</h3>
             <ul className="space-y-2 text-sm text-white/80">
               {SERVICE_LINKS.map((s) => (
-                <li key={s.href}>
+                <li key={s.label}>
                   <Link className="hover:text-white" href={s.href}>
                     {s.label}
                   </Link>

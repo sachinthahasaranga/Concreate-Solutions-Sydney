@@ -9,7 +9,7 @@ import FooterBlue from '@/components/layout/FooterBlue'
 import PageHeader from '@/components/layout/PageHeader'
 
 export const metadata = {
-  title: 'About Us | Concreate Solutions Sydney',
+  title: 'About Us | RRR Bricklaying',
   description:
     'We deliver reliable brick and concrete work across Sydney with ISO-aligned practices and tidy finishes. Learn about our crew, process, and values.',
   alternates: { canonical: '/about' },

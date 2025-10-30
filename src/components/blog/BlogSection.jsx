@@ -17,7 +17,7 @@ async function getPosts(limit = 6) {
 
 export default async function BlogSection({
   title = 'From the Blog',
-  blurb = 'Tips, how-tos and project insights from our Sydney team.',
+  blurb = 'Tips and insights from our Sydney team.',
   limit = 6,
 }) {
   const posts = await getPosts(limit)

@@ -1,4 +1,6 @@
 'use client'
+import { useMemo } from 'react'
+
 export default function BrandSeal({
   labelOuter = 'BRICKLAYING & HARDSCAPE • CONTRACTOR SERVICES •',
   icon = '✦',
@@ -8,7 +10,12 @@ export default function BrandSeal({
 }) {
   const r = size / 2
   const textRadius = r - 20
-  const charAngle = 360 / labelOuter.length
+
+  const round = (n) => Math.round(n * 1000) / 1000
+
+  const chars = useMemo(() => Array.from(labelOuter), [labelOuter])
+  const charAngle = 360 / chars.length
+
   return (
     <svg
       className="brandseal-svg drop-shadow-lg"
@@ -20,14 +27,14 @@ export default function BrandSeal({
       <circle cx={r} cy={r} r={r} fill={bg} />
       <circle cx={r} cy={r} r={r - 8} fill="none" stroke={fg} strokeWidth="2" opacity="0.7" />
       <g fill={fg}>
-        {Array.from(labelOuter).map((ch, i) => {
-          const angle = (i * charAngle - 90) * (Math.PI / 180)
-          const x = r + textRadius * Math.cos(angle)
-          const y = r + textRadius * Math.sin(angle)
-          const rotate = i * charAngle
+        {chars.map((ch, i) => {
+          const angleRad = ((i * charAngle) - 90) * (Math.PI / 180)
+          const x = round(r + textRadius * Math.cos(angleRad))
+          const y = round(r + textRadius * Math.sin(angleRad))
+          const rotate = round(i * charAngle)
           return (
             <text
-              key={i}
+              key={`${i}-${ch}`}
               x={x}
               y={y}
               fontSize="12"
