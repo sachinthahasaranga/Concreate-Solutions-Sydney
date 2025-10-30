@@ -1,10 +1,8 @@
-// app/layout.jsx
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import 'aos/dist/aos.css'
 import SiteHeader from '@/components/layout/SiteHeader'
 
-// 1) Set up fonts (optional but nice)
 const geistSans = Geist({
   subsets: ['latin'],
   variable: '--font-geist-sans',
@@ -14,7 +12,6 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
 })
 
-// 2) Global metadata
 export const metadata = {
   metadataBase: new URL('https://www.concreatesolutions.com'),
   title: {
