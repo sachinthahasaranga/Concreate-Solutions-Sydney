@@ -14,7 +14,7 @@
       "Neat cuts & tidy sites"
     ],
     "longDesc": "From face brick to structural blockwork, our licensed teams deliver crisp lines, consistent joints and safe, tidy work sites that keep your build moving.",
-    "gallery": ["/images/services/s1a.jpg", "/images/services/s1b.jpg"],
+    "gallery": ["/images/services/s1a.png", "/images/services/s1b.png"],
     "badge": "Popular",
     "cta": { "label": "View Brickwork", "href": "/services/" },
     "icon": ""
@@ -34,7 +34,7 @@
       "Council & compliance guidance"
     ],
     "longDesc": "We build retaining walls to spec with correct drainage, reinforcement and footings so the structure performs long term without surprise movement.",
-    "gallery": ["/images/services/s2a.jpg"],
+    "gallery": ["/images/services/s2a.png"],
     "badge": "Engineered",
     "cta": { "label": "View Retaining Walls", "href": "/services/" },
     "icon": ""
@@ -54,7 +54,7 @@
       "Paths, crossovers & shed slabs"
     ],
     "longDesc": "Driveways and slabs delivered cleanly with the right base, steel and finish. We plan access, set levels and hand over a neat surface ready to use.",
-    "gallery": ["/images/services/s3a.jpg", "/images/services/s3b.jpg"],
+    "gallery": ["/images/services/s3a.png", "/images/services/s3b.png"],
     "badge": "Engineered",
     "cta": { "label": "View Driveways", "href": "/services/" },
     "icon": ""
@@ -74,7 +74,7 @@
       "Clean, low-maintenance finishes"
     ],
     "longDesc": "We combine structural elements with practical prep to deliver outdoor areas that look great and drain/perform well long term.",
-    "gallery": ["/images/services/s4a.jpg"],
+    "gallery": ["/images/services/s4a.png"],
     "badge": "Complete",
     "cta": { "label": "View Landscaping", "href": "/services/" },
     "icon": ""
@@ -94,27 +94,7 @@
       "Sealing & maintenance advice"
     ],
     "longDesc": "We deliver patios and pathways with tight joints, clean cuts and solid compaction so they stay flat and sharp.",
-    "gallery": ["/images/services/s5a.jpg"],
-    "badge": "Durable",
-    "cta": { "label": "View Paving", "href": "/services/" },
-    "icon": ""
-  },
-  {
-    "id": "paving1",
-    "title": "Paving",
-    "desc": "Long-lasting patios, paths and entries with neat cuts and compaction.",
-    "image": "/images/services/s5.png",
-    "href": "/services/",
-
-    "tagline": "Neat cuts. Solid compaction.",
-    "features": [
-      "Base prep & screed",
-      "Pattern layouts & borders",
-      "Drainage falls & edging",
-      "Sealing & maintenance advice"
-    ],
-    "longDesc": "We deliver patios and pathways with tight joints, clean cuts and solid compaction so they stay flat and sharp.",
-    "gallery": ["/images/services/s5a.jpg"],
+    "gallery": ["/images/services/s5a.png"],
     "badge": "Durable",
     "cta": { "label": "View Paving", "href": "/services/" },
     "icon": ""

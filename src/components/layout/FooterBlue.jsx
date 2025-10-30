@@ -16,12 +16,12 @@ const QUICK_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { label: 'Bricklaying', href: '/services/bricklaying' },
-  { label: 'Retaining Walls', href: '/services/retaining-walls' },
-  { label: 'Concrete Driveways', href: '/services/concrete-driveways' },
-  { label: 'Decorative Concrete', href: '/services/decorative-concrete' },
+  { label: 'Bricklaying', href: '/services/' },
+  { label: 'Retaining Walls', href: '/services/' },
+  { label: 'Concrete Driveways', href: '/services/' },
+  { label: 'Decorative Concrete', href: '/services/' },
   { label: 'Paving', href: '/services/paving' },
-  { label: 'Excavation', href: '/services/excavation' },
+  { label: 'Excavation', href: '/services/' },
 ]
 
 const toWa = (raw) => 'https://wa.me/' + (raw || '').replace(/^0/, '94').replace(/\D/g, '')
