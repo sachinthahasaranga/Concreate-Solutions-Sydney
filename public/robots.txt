@@ -1,0 +1,13 @@
+# robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin routes or API endpoints
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://concreate-solutions-sydney.vercel.app/sitemap.xml
+
+# Host
+Host: https://concreate-solutions-sydney.vercel.app
