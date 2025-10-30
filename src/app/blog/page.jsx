@@ -1,5 +1,6 @@
 import PageHeader from '@/components/layout/PageHeader'
 import BlogSectionClient from '@/components/blog/BlogSection.client'
+import FooterBlue from '@/components/layout/FooterBlue'
 
 export const metadata = {
   title: 'Blogs | Concreate Solutions Sydney',
@@ -21,6 +22,7 @@ export default function BlogPage() {
         accent="#ff8a00"
       />
       <BlogSectionClient />
+      <FooterBlue/>
     </main>
   )
 }
