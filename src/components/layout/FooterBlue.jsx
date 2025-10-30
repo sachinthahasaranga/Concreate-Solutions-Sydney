@@ -34,7 +34,7 @@ export default function FooterBlue(props) {
     brandName = 'Concreate Solutions',
     year = new Date().getFullYear(),
     whatsapp = '0712758785',
-    logoSrc = '/brand/concrete_logo.png',
+    logoSrc = '/images/concreet_logo.png',
   } = props || {}
 
   const [newsletterEmail, setNewsletterEmail] = useState('')
@@ -118,7 +118,7 @@ export default function FooterBlue(props) {
               and financial peace of mind.
             </p>
             <div className="mt-6 inline-flex items-end">
-              <span className="text-4xl font-extrabold tracking-tight">5+</span>
+              <span className="text-4xl font-extrabold tracking-tight">12+</span>
               <span className="ml-2 text-sm text-white/80">Years of Experience</span>
             </div>
 
@@ -199,7 +199,7 @@ export default function FooterBlue(props) {
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/60 md:flex-row md:items-center">
           <p>© {year} {brandName}. All rights reserved.</p>
           <p className="opacity-80">
-            Designed & Built by <a className="underline hover:text-white" href="#" target="_blank">Icon Global Digital</a>
+            Designed & Built by <a className="underline hover:text-white" href="#" target="_blank">Sachintha Hasaranga</a>
           </p>
         </div>
       </div>

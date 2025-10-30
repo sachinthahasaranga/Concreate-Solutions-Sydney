@@ -9,25 +9,25 @@ export default function WhyChooseUs({
   heading = 'Why Choose Us?',
   items = [
     {
-      icon: '/brand/icons/tools.svg',
+      icon: '/brand/icons/staff.png',
       title: 'Expert Bricklaying Team',
       text:
         'Our team consists of fully licensed, insured, and experienced professional bricklayers and mason bricklayers. We pride ourselves on attention to detail, ensuring every project meets the highest Australian standards for safety and finish',
     },
     {
-      icon: '/brand/icons/price.svg',
+      icon: '/brand/icons/price.png',
       title: 'Quality, Affordable Prices',
       text:
         'We guarantee quality work for affordable prices. By managing our operations efficiently as dedicated bricklaying contractors, we cut down overheads and pass the savings directly to you. No hidden fees, just competitive, honest quotes',
     },
     {
-      icon: '/brand/icons/handshake.svg',
+      icon: '/brand/icons/staff.png',
       title: 'Friendly & Trustworthy Staff',
       text:
         'You are dealing with friendly and trustworthy staff from the first call to final cleanup. We are the local bricklayers near me who treat your property with respect, communicate clearly, and ensure a hassle-free building experience.',
     },
     {
-      icon: '/brand/icons/map.svg',
+      icon: '/brand/icons/location.png',
       title: 'Local Sydney Expertise',
       text:
         'Based in Seven Hills NSW, we have intimate knowledge of local building regulations across the 30km radius of Greater Sydney. We are your reliable brick layer near me, committed to prompt and reliable service delivery.',
