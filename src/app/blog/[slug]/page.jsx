@@ -46,15 +46,15 @@ export default async function PostDetail({ params }) {
             </div>
 
             {!!post.imageUrl && (
-              <div className="overflow-hidden rounded-2xl ring-1 ring-black/10">
-                <Image src={post.imageUrl} alt={post.title} width={1600} height={900} className="h-auto w-full object-cover" unoptimized />
+              <div className="overflow-hidden rounded-2xl ring-1 ring-black/10 relative h-60 sm:h-72 md:h-130 w-full">
+                <Image src={post.imageUrl} alt={post.title} width={1600} height={400} className="h-auto w-full object-cover" unoptimized />
               </div>
             )}
 
             <div className="mt-8 space-y-6">
               <p className="text-[15px] leading-7 text-gray-700">{post.description}</p>
               <div className="prose prose-slate max-w-none">
-                <pre className="whitespace-pre-wrap break-words text-[15px] leading-7 text-gray-800">{post.content}</pre>
+                <pre className="whitespace-pre-wrap text-[15px] leading-7 text-gray-800">{post.content}</pre>
               </div>
             </div>
           </article>
