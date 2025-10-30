@@ -11,7 +11,7 @@ const slugify = (s = '') =>
 export default function NewPost() {
   const [form, setForm] = useState({
     title: '',
-    imageUrl: '',      // gets filled after Cloudinary upload
+    imageUrl: '',   
     description: '',
     content: '',
   })
@@ -128,7 +128,6 @@ export default function NewPost() {
       setErr(error?.message || 'Upload failed')
     } finally {
       setUploading(false)
-      // reset the file input so same file can be chosen again if needed
       if (fileInputRef.current) fileInputRef.current.value = ''
     }
   }
@@ -169,7 +168,6 @@ export default function NewPost() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_360px]">
           <form id="new-post-form" onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-gray-200 bg-white p-5">
-            {/* Title */}
             <div>
               <label className="block text-sm font-semibold text-gray-900">
                 Title <span className="text-red-600">*</span>
@@ -186,7 +184,6 @@ export default function NewPost() {
               </div>
             </div>
 
-            {/* Image upload (button only) + preview */}
             <div>
               <label className="block text-sm font-semibold text-gray-900">
                 Cover Image <span className="text-red-600">*</span>
@@ -230,7 +227,6 @@ export default function NewPost() {
               <p className="mt-1 text-xs text-gray-500">Recommended: 1600×900 (16:9).</p>
             </div>
 
-            {/* Description */}
             <div>
               <label className="block text-sm font-semibold text-gray-900">
                 Description <span className="text-red-600">*</span>
@@ -246,7 +242,6 @@ export default function NewPost() {
               <div className="mt-1 text-xs text-gray-500">{descCount} chars</div>
             </div>
 
-            {/* Content */}
             <div>
               <label className="block text-sm font-semibold text-gray-900">
                 Content <span className="text-red-600">*</span>
@@ -266,7 +261,6 @@ export default function NewPost() {
             </div>
           </form>
 
-          {/* Right panel */}
           <aside className="space-y-4">
             <div className="rounded-2xl border border-gray-200 bg-white p-5">
               <div className="text-sm font-semibold text-gray-900">Publishing</div>

@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Concrete Solutions Sydney —  RRR Bricklaying
 
-## Getting Started
+This is a Next.js web application built for Concrete Solutions Sydney, providing a responsive, SEO-optimized company website with smooth animations, contact forms, and blog management. this project leverages modern web technologies for performance, maintainability, and ease of deployment.
 
-First, run the development server:
+Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Category	                    Tools / Libraries
+    Frontend Framework	            Next.js (App Router)
+    Styling	                        Tailwind CSS, AOS for scroll animations
+    Forms & Email	                EmailJS for client-side email delivery
+    Media Hosting	                Cloudinary for image uploads and optimization
+    Database	                    Neon — serverless PostgreSQL
+    Deployment	                    Vercel
+    Alert & Feedback	            SweetAlert2
+    Icons & UI Components	        React Icons, custom Tailwind components, also from this site https://www.coolsymbol.top/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    First, install dependencies and start the development server:
+        npm install
+        npm run dev
 
-## Learn More
+    Then open http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+    Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+        Modern UI & Animations — Built with Tailwind CSS and AOS
+        Contact Form with EmailJS — Sends messages directly via EmailJS templates
+        Cloudinary Uploads — Handles media uploads in blog and CMS sections
+        Blog Management — Admin dashboard for post creation, image upload, and auto slug generation
+        SEO Optimized — Meta tags and responsive design
+        Deployed on Vercel — CI/CD connected with GitHub    
+    
+    Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+        NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_emailjs_service_id
+        NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+        NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 
-## Deploy on Vercel
+        NEXT_PUBLIC_CLOUDINARY_UPLOAD_FOLDER=concreate/blog
+        NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+        NEXT_PUBLIC_CLOUDINARY_API_KEY=your_cloudinary_api_key
+        CLOUDINARY_API_SECRET=your_cloudinary_secret
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+        DATABASE_URL=your_neon_postgres_connection_url
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Deployment
+        The app is hosted on Verce - 
+        
+        client-site Url ->              https://concreate-solutions-sydney.vercel.app/
+        Admin panel Url ->              https://concreate-solutions-sydney.vercel.app/admin/login
+
+
+    Additional Resources
+        Next.js Documentation       https://nextjs.org/docs
+        EmailJS Docs                https://www.emailjs.com/docs/
+        Cloudinary Upload API       https://cloudinary.com/documentation/upload_images
+        Neon PostgreSQL Docs        https://neon.com/docs/introduction
+        AOS Animation Docs          https://michalsnik.github.io/aos/
+
+
+    Author - Sachintha Hasaranga Niyangoda

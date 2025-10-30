@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://www.concreatesolutions.com'),
   title: {
-    default: 'Concreate Solutions Sydney',
-    template: '%s | Concreate Solutions Sydney',
+    default: 'RRR Bricklaying',
+    template: '%s | RRR Bricklaying',
   },
   description:
     'Trusted bricklaying, concrete, and hardscaping across Sydney. ISO-compliant delivery, tidy finishes, on-time handovers.',
@@ -30,10 +30,10 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.concreatesolutions.com',
-    title: 'Concreate Solutions Sydney',
+    title: 'RRR Bricklaying',
     description:
       'Brickwork & concrete done right the first time. Reliable crews, transparent pricing, tidy finishes.',
-    siteName: 'Concreate Solutions Sydney',
+    siteName: 'RRR Bricklaying',
     images: [
       {
         url: '/og-cover.png',
