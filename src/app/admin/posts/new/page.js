@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import Swal from 'sweetalert2'
 
 const slugify = (s = '') =>
   s.toLowerCase().trim()
@@ -10,15 +11,15 @@ const slugify = (s = '') =>
 export default function NewPost() {
   const [form, setForm] = useState({
     title: '',
-    imageUrl: '',
+    imageUrl: '',      // gets filled after Cloudinary upload
     description: '',
     content: '',
   })
   const [err, setErr] = useState('')
-  const [ok, setOk] = useState('')
   const [loading, setLoading] = useState(false)
-
   const [uploading, setUploading] = useState(false)
+
+  const fileInputRef = useRef(null)
 
   const derivedSlug = useMemo(() => slugify(form.title || ''), [form.title])
   const descCount = form.description.trim().length
@@ -35,16 +36,13 @@ export default function NewPost() {
     if (!form.title.trim()) return 'Title is required'
     if (!form.description.trim()) return 'Description is required'
     if (!form.content.trim()) return 'Content is required'
-    if (form.imageUrl && !/^https?:\/\/.+/i.test(form.imageUrl.trim())) {
-      return 'Image URL must be an absolute http(s) URL'
-    }
+    if (!form.imageUrl.trim()) return 'Cover image is required'
     return ''
   }
 
   async function onSubmit(e) {
     e.preventDefault()
     setErr('')
-    setOk('')
     const v = validate()
     if (v) { setErr(v); return }
     setLoading(true)
@@ -55,8 +53,13 @@ export default function NewPost() {
         body: JSON.stringify(form),
       })
       if (res.ok) {
-        setOk('Post created successfully')
-        setTimeout(() => (window.location.href = '/admin/dashboard'), 350)
+        await Swal.fire({
+          icon: 'success',
+          title: 'Post created',
+          text: 'Your article has been published.',
+          confirmButtonColor: '#111827',
+        })
+        window.location.href = '/admin/dashboard'
       } else {
         const j = await res.json().catch(() => ({}))
         setErr(j?.error || 'Failed to create post')
@@ -111,15 +114,22 @@ export default function NewPost() {
     const file = e.target.files?.[0]
     if (!file) return
     try {
-      setUploading(true)
       setErr('')
+      setUploading(true)
       const url = await uploadToCloudinary(file)
       update('imageUrl', url)
-      setOk('Image uploaded')
+      await Swal.fire({
+        icon: 'success',
+        title: 'Image uploaded',
+        text: 'Cover image added successfully.',
+        confirmButtonColor: '#111827',
+      })
     } catch (error) {
       setErr(error?.message || 'Upload failed')
     } finally {
       setUploading(false)
+      // reset the file input so same file can be chosen again if needed
+      if (fileInputRef.current) fileInputRef.current.value = ''
     }
   }
 
@@ -156,11 +166,10 @@ export default function NewPost() {
 
       <section className="mx-auto max-w-6xl px-4 py-6">
         {!!err && <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{err}</div>}
-        {!!ok && <div className="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">{ok}</div>}
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_360px]">
           <form id="new-post-form" onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-gray-200 bg-white p-5">
-            
+            {/* Title */}
             <div>
               <label className="block text-sm font-semibold text-gray-900">
                 Title <span className="text-red-600">*</span>
@@ -177,21 +186,33 @@ export default function NewPost() {
               </div>
             </div>
 
-            
+            {/* Image upload (button only) + preview */}
             <div>
-              <label className="block text-sm font-semibold text-gray-900">Image</label>
-
-              <div className="mt-2 flex items-center gap-3">
-                <input type="file" accept="image/*" onChange={onPickFile} className="text-sm" />
-                {uploading && <span className="text-xs text-gray-500">Uploading…</span>}
-              </div>
+              <label className="block text-sm font-semibold text-gray-900">
+                Cover Image <span className="text-red-600">*</span>
+              </label>
 
               <input
-                className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-gray-500"
-                placeholder="https://example.com/cover.jpg"
-                value={form.imageUrl}
-                onChange={(e) => update('imageUrl', e.target.value)}
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={onPickFile}
               />
+
+              <div className="mt-2 flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploading}
+                  className="rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-60"
+                >
+                  {uploading ? 'Uploading…' : (form.imageUrl ? 'Replace Image' : 'Add Image')}
+                </button>
+                <span className={`text-xs ${form.imageUrl ? 'text-emerald-600' : 'text-gray-500'}`}>
+                  {form.imageUrl ? 'Image added' : 'No image selected'}
+                </span>
+              </div>
 
               {form.imageUrl?.trim() ? (
                 <div className="mt-3 overflow-hidden rounded-xl border border-gray-200">
@@ -206,7 +227,7 @@ export default function NewPost() {
                 </div>
               ) : null}
 
-              <p className="mt-1 text-xs text-gray-500">Use a 1600×900 image for best results.</p>
+              <p className="mt-1 text-xs text-gray-500">Recommended: 1600×900 (16:9).</p>
             </div>
 
             {/* Description */}

@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useMemo, useState } from 'react'
+import Swal from 'sweetalert2'
 
 export default function AdminDashboard() {
   const [items, setItems] = useState([])
@@ -18,6 +19,13 @@ export default function AdminDashboard() {
         if (alive) setItems(items || [])
       } catch (e) {
         if (alive) setErr(e?.message || 'Error loading posts')
+        // Show a SweetAlert error too
+        Swal.fire({
+          icon: 'error',
+          title: 'Load failed',
+          text: e?.message || 'Error loading posts',
+          confirmButtonColor: '#111827',
+        })
       } finally {
         if (alive) setLoading(false)
       }
@@ -36,21 +44,56 @@ export default function AdminDashboard() {
   }, [items, q])
 
   async function onDelete(id) {
-    if (!confirm('Delete this post? This cannot be undone.')) return
+    const res = await Swal.fire({
+      title: 'Delete this post?',
+      text: 'This action cannot be undone.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#b91c1c',
+      cancelButtonColor: '#6b7280',
+      reverseButtons: true,
+      focusCancel: true,
+    })
+    if (!res.isConfirmed) return
+
     try {
       const r = await fetch(`/api/posts/${id}`, { method: 'DELETE' })
       if (!r.ok) throw new Error('Delete failed')
       setItems(prev => prev.filter(x => x.id !== id))
+      Swal.fire({
+        icon: 'success',
+        title: 'Deleted',
+        text: 'The post has been removed.',
+        timer: 1200,
+        showConfirmButton: false,
+      })
     } catch (e) {
-      alert(e?.message || 'Delete failed')
+      Swal.fire({
+        icon: 'error',
+        title: 'Delete failed',
+        text: e?.message || 'Could not delete the post.',
+        confirmButtonColor: '#111827',
+      })
     }
   }
 
   async function onLogout() {
     try {
       await fetch('/api/auth/logout', { method: 'POST' })
-    } catch {}
-    window.location.href = '/admin/login'
+      await Swal.fire({
+        icon: 'success',
+        title: 'Signed out',
+        text: 'You have been logged out.',
+        timer: 1200,
+        showConfirmButton: false,
+      })
+    } catch {
+      // even if it fails, still navigate to login
+    } finally {
+      window.location.href = '/admin/login'
+    }
   }
 
   return (
