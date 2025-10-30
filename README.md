@@ -51,13 +51,75 @@ Getting Started
         client-site Url ->              https://concreate-solutions-sydney.vercel.app/
         Admin panel Url ->              https://concreate-solutions-sydney.vercel.app/admin/login
 
+        Admin credentials->     email-              admin@example.com
+                                password-           Admin@12345
+        
 
-    Additional Resources
-        Next.js Documentation       https://nextjs.org/docs
-        EmailJS Docs                https://www.emailjs.com/docs/
-        Cloudinary Upload API       https://cloudinary.com/documentation/upload_images
-        Neon PostgreSQL Docs        https://neon.com/docs/introduction
-        AOS Animation Docs          https://michalsnik.github.io/aos/
+    Table structure 
+        model User {
+        id           Int        @id @default(autoincrement())
+        email        String     @unique
+        username     String     @unique
+        passwordHash String
+        isActive     Boolean    @default(true)
+        createdAt    DateTime   @default(now())
+        updatedAt    DateTime   @updatedAt
+
+        roles        UserRole[]
+        posts        Post[]
+
+        @@index([email])
+        @@index([username])
+        }
+        -----------------------------------------------------
+        model Role {
+        id          Int        @id @default(autoincrement())
+        name        String     @unique //  "admin", "user"
+        description String?
+        createdAt   DateTime   @default(now())
+        updatedAt   DateTime   @updatedAt
+
+        users       UserRole[]
+        }
+        -----------------------------------------------------
+        model UserRole {
+        userId     Int
+        roleId     Int
+        assignedAt DateTime @default(now())
+
+        user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+        role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+        @@id([userId, roleId]) 
+        @@index([userId])
+        @@index([roleId])
+        }
+        -----------------------------------------------------
+        model Post {
+        id          Int       @id @default(autoincrement())
+        title       String
+        slug        String    @unique
+        imageUrl    String?
+        description String
+        content     String
+        publishedAt DateTime  @default(now())
+        createdAt   DateTime  @default(now())
+        updatedAt   DateTime  @updatedAt
+
+        authorId Int?
+        author   User?     @relation(fields: [authorId], references: [id])
+
+        @@index([publishedAt])
+        @@index([authorId])
+        }
+        -----------------------------------------------------
+
+Additional Resources
+    Next.js Documentation       https://nextjs.org/docs
+    EmailJS Docs                https://www.emailjs.com/docs/
+    Cloudinary Upload API       https://cloudinary.com/documentation/upload_images
+    Neon PostgreSQL Docs        https://neon.com/docs/introduction
+    AOS Animation Docs          https://michalsnik.github.io/aos/
 
 
-    Author - Sachintha Hasaranga Niyangoda
+Author - Sachintha Hasaranga Niyangoda
