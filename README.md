@@ -122,4 +122,4 @@ Additional Resources
     AOS Animation Docs          https://michalsnik.github.io/aos/
 
 
-Author - Sachintha Hasaranga Niyangoda
+Author - Sachintha Hasaranga Niyangoda.
