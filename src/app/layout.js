@@ -1,11 +1,67 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.jsx
+import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import 'aos/dist/aos.css'
 import SiteHeader from '@/components/layout/SiteHeader'
 
+// 1) Set up fonts (optional but nice)
+const geistSans = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist-sans',
+})
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+})
+
+// 2) Global metadata
 export const metadata = {
-  title: 'Concreate Solutions Sydney',
-  description: 'Professional concrete services in Sydney',
+  metadataBase: new URL('https://www.concreatesolutions.com'),
+  title: {
+    default: 'Concreate Solutions Sydney',
+    template: '%s | Concreate Solutions Sydney',
+  },
+  description:
+    'Trusted bricklaying, concrete, and hardscaping across Sydney. ISO-compliant delivery, tidy finishes, on-time handovers.',
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.concreatesolutions.com',
+    title: 'Concreate Solutions Sydney',
+    description:
+      'Brickwork & concrete done right the first time. Reliable crews, transparent pricing, tidy finishes.',
+    siteName: 'Concreate Solutions Sydney',
+    images: [
+      {
+        url: '/og-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Concreate Solutions — Sydney masonry & concrete',
+      },
+    ],
+    locale: 'en_AU',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Concreate Solutions Sydney',
+    description:
+      'Brickwork & concrete done right the first time. Reliable crews, transparent pricing, tidy finishes.',
+    images: ['/og-cover.png'],
+  },
+  alternates: {
+    canonical: 'https://www.concreatesolutions.com.au',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({ children }) {
@@ -18,4 +74,3 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-

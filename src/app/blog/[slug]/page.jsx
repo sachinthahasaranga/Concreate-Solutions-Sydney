@@ -30,7 +30,7 @@ export default async function PostDetail({ params }) {
         kicker="INSIGHTS"
         title={post.title}
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.title }]}
-        imageSrc="/images/blog/header.jpg"
+        imageSrc="/images/bgdetail.png"
         imageAlt="Project collage"
         bgImage="/images/headers/header.png"
         accent="#ff8a00"
