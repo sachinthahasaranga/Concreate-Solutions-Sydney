@@ -28,8 +28,8 @@ const toWa = (raw) => 'https://wa.me/' + (raw || '').replace(/^0/, '94').replace
 
 export default function FooterBlue(props) {
   const {
-    phone = '0429 550 837',
-    email = 'info@concreatesolutions.com.au',
+    phone = '071 275 8785',
+    email = 'info@rrrbrick.com',
     address = 'Sydney, NSW, Australia',
     brandName = 'Concreate Solutions',
     year = new Date().getFullYear(),

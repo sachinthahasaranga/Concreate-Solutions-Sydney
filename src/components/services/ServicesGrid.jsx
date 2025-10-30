@@ -75,12 +75,6 @@ export default function ServicesGrid({ items = [], id = 'services-grid' }) {
 
                 
                 <div className="mt-3 flex items-center gap-3">
-                  <Link
-                    href={s.href}
-                    className="rounded-full border border-[#0b2a4a]/15 bg-white px-4 py-2 text-sm font-semibold text-[#0b2a4a]"
-                  >
-                    View Page
-                  </Link>
                   <button
                     onClick={() => setOpenId(isOpen ? null : s.id)}
                     aria-expanded={isOpen}

@@ -13,7 +13,7 @@ export default function ServicesHero({
   ctaLabel = 'Explore Services',
   ctaHref = '/services#list',
   phoneLabel = 'CALL US',
-  phoneNumber = '0429 550 837',
+  phoneNumber = '071 275 8785',
   imgMain = '/images/services/s_1.png',
   imgInset = '/images/services/s_11.png',
 }) {

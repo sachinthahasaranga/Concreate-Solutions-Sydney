@@ -9,7 +9,8 @@ export default function ServicesShowcase({
   subtext = 'We deliver integrated hardscaping and construction services—from site prep to the final finish.',
 }) {
   const [hovered, setHovered] = useState(null)               
-  const scroller = useRef(null)                
+  const scroller = useRef(null)      
+  const items = data.slice(0, 5)          
 
   const nudge = (dir = 1) => {
     const el = scroller.current
@@ -53,7 +54,7 @@ export default function ServicesShowcase({
             ref={scroller}
             className="group grid grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-2 md:auto-cols-fr md:grid-cols-5 md:overflow-visible"
           >
-            {data.map((item, idx) => {
+            {items.map((item, idx) => {
               const isDim = hovered !== null && hovered !== idx
               return (
                 <a

@@ -8,8 +8,8 @@ const input =
   'w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none placeholder:text-gray-400 focus:border-[#0b2a4a]'
 
 export default function HomeQuoteSection({
-  phone = '0429 550 837',
-  email = 'info@concreatesolutions.com.au',
+  phone = '071-2758785',
+  email = 'info@rrrbrick.com',
 }) {
   const [loading, setLoading] = useState(false)
   const [f, setF] = useState({
@@ -22,7 +22,6 @@ export default function HomeQuoteSection({
   })
   const onChange = (e) => setF((s) => ({ ...s, [e.target.name]: e.target.value }))
 
-  // --- EmailJS init (once) ---
   useEffect(() => {
     const pk = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     if (pk) emailjs.init({ publicKey: pk })
@@ -60,7 +59,6 @@ export default function HomeQuoteSection({
     const selectedLabel =
       services.find((s) => String(s.id) === String(f.service))?.label || f.service
 
-    // base template params used for both emails
     const base = {
       name: f.name.trim(),
       email: f.email.trim(),

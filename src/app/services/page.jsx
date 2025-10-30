@@ -28,7 +28,7 @@ export default function ServicesPage() {
         title={['Your Complete Partner:', 'From Foundations to', 'Final Finishes.']}
         blurb={`From structural blockwork and retaining walls to concrete driveways and paths,
                 our Sydney crews manage the full scope with clear communication and tidy handovers.`}
-        phoneNumber="0429 550 837"
+        phoneNumber="071 275 8785"
       />
 
        <ServicesGrid items={services} />
