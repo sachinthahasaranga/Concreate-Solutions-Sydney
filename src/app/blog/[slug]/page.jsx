@@ -54,7 +54,7 @@ export default async function PostDetail({ params }) {
             <div className="mt-8 space-y-6">
               <p className="text-[15px] leading-7 text-gray-700">{post.description}</p>
               <div className="prose prose-slate max-w-none">
-                <pre className="whitespace-pre-wrap text-[15px] leading-7 text-gray-800">{post.content}</pre>
+                <div className="whitespace-pre-wrap text-[15px] leading-7 text-gray-800">{post.content}</div>
               </div>
             </div>
           </article>
