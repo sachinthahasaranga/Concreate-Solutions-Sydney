@@ -20,7 +20,7 @@ export default function ValueProps({
     {
       icon: '/brand/services/service_lg1.png',
       title: 'Reliable Local Crews',
-      copy: 'Our Sydney-based bricklayers and concreters mobilise fast across the metro area and turn up on time—every time.',
+      copy: 'Our Sydney-based bricklayers and concreters mobilise fast across the metro area and turn up on time every time.',
     },
     {
       icon: '/brand/services/service_lg2.png',
@@ -30,7 +30,7 @@ export default function ValueProps({
     {
       icon: '/brand/services/service_lg3.png',
       title: 'Transparent Pricing & Planning',
-      copy: 'Clear scopes, fixed quotes where possible, and progress updates you can rely on—no surprises on your invoice.',
+      copy: 'Clear scopes, fixed quotes where possible, and progress updates you can rely on no surprises on your invoice.',
     },
   ],
 }) {
